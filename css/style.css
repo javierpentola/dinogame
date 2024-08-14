@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#container {
+    height: 400px;
+    width: 1200px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+#dino {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 28px;
+    left: 20px;
+}
+
+#dino img {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.dinoActive {
+    animation: animateDino 0.5s linear infinite;
+}
+
+@keyframes animateDino {
+    0%, 100% {
+        bottom: 28px;
+    }
+    45%, 55% {
+        bottom: 160px;
+    }
+}
+
+#block {
+    height: 80px;
+    width: 125px;
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+}
+
+#block img {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.blockActive {
+    animation: blockAnimate 1s linear infinite;
+}
+
+@keyframes blockAnimate {
+    0% {
+        right: -125px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+#road {
+    height: 30px;
+    width: 1200px;
+    position: absolute;
+    bottom: 0;
+}
+
+#road img {
+    height: 100%;
+    width: 2000px;
+    position: absolute;
+    left: 0;
+    animation: none;
+}
+
+@keyframes roadAnimate {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -800px;
+    }
+}
+
+#cloud {
+    height: 80px;
+    width: 1200px;
+    position: absolute;
+    top: 30px;
+    border-radius: 40px;
+}
+
+#cloud img {
+    height: 100%;
+    width: 2000px;
+    position: absolute;
+    left: -2000px;
+    animation: none;
+}
+
+@keyframes cloudAnimate {
+    0% {
+        left: -2000px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#gameOver {
+    display: none;
+    font-size: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 362px;
+    text-align: center;
+    color: #525252;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+}
